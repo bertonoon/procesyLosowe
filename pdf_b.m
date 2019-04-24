@@ -5,6 +5,6 @@ los = rand(1);
     else
         E = 0 - sqrt((1-rand(1))*(1)*(1));
         %to ze wzoru z wikipedii na generowanie zmiennych losowych
-        %o rozk≥adzie trÛjkπtnym
+        %o rozk≈Çadzie tr√≥jk≈°tnym
     end
-end
+end 
