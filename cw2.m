@@ -35,7 +35,7 @@ b = 1;  % parametr skali (jak wysoki będzie pik)
 gaus2 = randn(N,1);
 cauchy = a + b*tan(pi*(gaus2 - 0.5)); % wzór z wikipedii angielskiej(pozycja Quantile w tabelce po prawej)
 % cauchy = (randn(N,1))./(randn(N,1));  %sposób z wykładu(ale nie wiedziałem jak ustawić a i b)
-cauchypdf = 1./(pi*b*(1 + ((x-a)./b).^2));  %wzór z wikipedii (pozycja PDF w tabelce po prawej)
+cauchypdf = 1./(pi*b*(1 + ((x-a)./b).^2));  %wzór z wikipedii (pozycja PDF w tabelce po prawej) 
 
 figure(2)
 subplot(3,1,1);
