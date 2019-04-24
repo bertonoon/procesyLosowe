@@ -5,4 +5,4 @@ los = rand(1);
     else
         E = rand(1)*2;
     end
-end
+end 
