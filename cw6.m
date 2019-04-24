@@ -10,7 +10,7 @@ for i = 1:N,
         F(i) = F(i) + (1/4)*((E - m_E)/odchyl_E);
     end
 end
-
+ 
 %histogram
 left=-5; width=0.5; right=5;
 bins=[left:width:right];
