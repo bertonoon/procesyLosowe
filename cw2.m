@@ -51,7 +51,7 @@ bins=[left:width:right];
 [yvalues,xvalues]=hist(cauchy,bins);
 yvalues=yvalues/(N*width);
 bar(xvalues,yvalues);
-axis([left right 0 0.4]);
+axis([left+0.5 right-0.5 0 0.4]);
 
 hold on 
 plot(x,cauchypdf,'r');
