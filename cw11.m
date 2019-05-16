@@ -3,17 +3,21 @@ format long
 format compact 
 
 % cwiczenie 11
-% Tu znowu sprawdzanie w³asnoœci z wyk³adu. Gestosc w kazdym punkcie >= 0
-% oraz calka od minus niesk. do +niesk musi byæ =1.
+% Tu znowu sprawdzanie wlasnosci z wykladu. Gestosc w kazdym punkcie >= 0
+% oraz calka od minus niesk. do +niesk musi byc =1.
 
-% Jakiœ du¿y zakres argumentów 
+% JakiÅ“ duÂ¿y zakres argumentÃ³w 
 X = -1e2:0.01:1e2;
 d = X(10) - X(9);
 
 % 1
 Y1 = zeros(size(X));
 for i=1:1:length(X) 
-    Y1(i) = exp(-X(i))*heaviside(X(i));
+    if(X(i) < 0)
+        Y1(i) = 0;
+    else
+        Y1(i) = exp(-X(i))*heaviside(X(i));
+    end
 end
 figure(1)
 subplot(2,2,1)
@@ -24,6 +28,7 @@ for i=2:1:length(X);
     calka1 = calka1 + 0.5*(Y1(i-1)+Y1(i))*d;
 end
 calka1
+
 % 2
 Y2 = exp(-abs(X));
 subplot(2,2,2)
@@ -33,6 +38,7 @@ for i=2:1:length(X);
     calka2 = calka2 + 0.5*(Y2(i-1)+Y2(i))*d;
 end
 calka2
+
 % 3
 Y3 = zeros(size(X));
 for i=1:1:length(X)
@@ -50,8 +56,16 @@ for i=2:1:length(X);
     calka3 = calka3 + 0.5*(Y3(i-1)+Y3(i))*d;
 end
 calka3
+
 % 4
-Y4 = 2*X.*exp(-X.^2).*heaviside(X);
+Y4 = zeros(size(X));
+for i=1:1:length(X)
+    if(X(i) < 0)
+        Y4(i) = 0;
+    else
+        Y4(i) = 2*X(i)*exp(-X(i)^2);
+    end
+end
 subplot(2,2,4)
 plot(X,Y4);
 % calka4 = integral(@cw11_fun4,-1e5,1e5)
